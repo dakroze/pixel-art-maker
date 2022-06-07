@@ -5,8 +5,6 @@ let canvas = document.getElementById("pixelCanvas");
 let color = document.getElementById("colorPicker");
 // set element with sizePicker ID
 let sizePicker = document.getElementById("sizePicker");
-// set element for toggle button
-var toggle = document.getElementById("gridToggle");
 // set element with inputHeight ID
 let height = document.getElementById("inputHeight");
 // set element with inputWidth ID
@@ -29,11 +27,7 @@ function makeGrid(height, width) {
                 // sets value of cell to color picked
                 cell.style.backgroundColor = color.value;
               });
-            //cell.addEventListener("dblclick", function(evt) {
-                // hide cell when double clicked
-              //  cell.style.display = "none";
-            //  });
-            // add event listener to each to return cell to white
+
             cell.addEventListener("contextmenu", function(ev) {
                 ev.preventDefault();
                 cell.style.backgroundColor = "white";
@@ -41,21 +35,6 @@ function makeGrid(height, width) {
           };
         };
       };
-// function to toggle cells
-
-toggle.addEventListener("click", function() {
-    ev.preventDefault();
-    for (var i=0; i<cell.length; ++i) {
-        if (cell[i].style.backgroundColor === "white"){
-            cell[i].remove
-        }
-        for (var j=0; j<row.length; ++j) {
-          if (row[j].style.backgroundColor === "white"){
-              row[j].remove
-          }
-      }
-    }
-});
 // function uses submit button to call makeGrid() funtion
 sizePicker.addEventListener("submit", function(ev) {
     ev.preventDefault();
